@@ -1,0 +1,141 @@
+@use "../global" as *;
+
+/*-----------------------------------------------
+form
+-----------------------------------------------*/
+.page-contact {
+
+
+    &__form {
+        margin-bottom: 48px;
+        background: var(--bg);
+        padding: 64px 110px;
+        border-radius: 16px;
+    }
+
+    .form__inner {
+        padding: 64px 110px;
+        background: var(--color-bg-form);
+    }
+
+    .red {
+        font-size: 16px;
+        line-height: 1.6;
+        letter-spacing: 0.08em;
+        color: var(--color-required);
+    }
+
+    .text {
+        font-size: 2rem;
+        font-weight: 700;
+        color: var(--color-text-form);
+    }
+
+    .checkbox-group {
+        margin: 10px 0 20px;
+        color: #222;
+
+        input[type="checkbox"] {
+            width: 16px;
+            height: 16px;
+            margin-right: 16px;
+            vertical-align: bottom;
+        }
+    }
+
+    input[type="text"],
+    input[type="tel"],
+    input[type="email"],
+    textarea {
+        font-size: 1.6rem;
+        width: 100%;
+        padding: 0.75rem 1.5rem;
+        border: 2px solid #e5e5e5;
+        background: #fff;
+        margin: 20px 0;
+    }
+
+    .checkbox-group {
+        display: flex;
+        gap: 24px;
+    }
+
+    .checkbox {
+        label {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        margin-top: 64px;
+        margin-bottom: 44px;
+
+        input[type="checkbox"] {
+            width: 16px;
+            height: 16px;
+            margin-right: 14px;
+            display: flex;
+            align-items: center;
+        }
+
+        p {
+            color: #4c4c4c;
+            font-size: 1.4rem;
+            line-height: 1.6;
+            letter-spacing: 0.07em;
+        }
+
+        a {
+            color: #4c4c4c;
+            text-decoration: underline;
+            text-underline-offset: 20%;
+        }
+    }
+
+    .submit-btn {
+        background: var(--color-brand-sub);
+        color: #fff;
+        text-align: center;
+        font-size: 2.4rem;
+        font-weight: 700;
+        line-height: 2.4rem;
+        letter-spacing: 0.08em;
+        max-width: 500px;
+        width: 100%;
+        height: 90px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+        transition: 0.3s;
+        cursor: pointer;
+
+        &:hover {
+            opacity: .8;
+        }
+    }
+
+    .privacy {
+        &__title {
+            font-size: 2.4rem;
+            font-weight: 700;
+            margin-bottom: 24px;
+        }
+
+        &__description {
+            margin-bottom: 40px;
+        }
+
+    }
+
+    @include mq(md) {
+        .form__inner {
+            padding: 32px 20px;
+        }
+
+        .checkbox-group {
+            flex-direction: column;
+            gap: 16px;
+        }
+    }
+}

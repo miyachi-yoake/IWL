@@ -1,0 +1,105 @@
+@use "../global" as *;
+
+/*footer
+-----------------------------------------------*/
+.footer {
+    position: relative;
+    z-index: 1;
+    background: #FFFFFF;
+    font-weight: 700;
+
+    &__inner {
+        padding: 32px 0 22px;
+        font-weight: 700;
+        color: var(--color-nav);
+        max-width: var(--container-max-width);
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__logo {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        min-width: 385px;
+        font-family: "noto serif jp", serif;
+        font-size: 32px;
+        line-height: 1.75;
+        letter-spacing: 0.1em;
+
+        margin-bottom: 12px;
+    }
+
+    &__address {
+        font-size: 1.4rem;
+        font-weight: 700;
+        padding: 10px 0px;
+        line-height: 1.5;
+    }
+
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    &__item {
+        font-size: 1.6rem;
+        padding: 11px 12px;
+        margin: 0 4px;
+        border-right: 1px solid rgb(#000, 0.16);
+
+        &:last-child {
+            border-right: none;
+        }
+    }
+
+    &__copyright {
+        font-size: 1.4rem;
+        text-align: center;
+        background: var(--color-brand);
+        color: #fff;
+        padding: 20px;
+        letter-spacing: 0.04em;
+        line-height: 1;
+
+    }
+
+    @include mq(xl) {
+        &__inner {
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+    }
+
+    @include mq(lg) {
+        &__inner {
+            flex-direction: column;
+        }
+
+        &__logo {
+            padding: 0;
+            margin-inline: auto;
+        }
+
+        &__address {
+            text-align: center;
+        }
+    }
+
+    @include mq(md) {
+        &__logo {
+            font-size: 20px;
+            min-width: 270px;
+        }
+
+        &__item {
+            border-right: none;
+        }
+
+        &__copyright {
+            font-size: 1.2rem;
+        }
+    }
+}

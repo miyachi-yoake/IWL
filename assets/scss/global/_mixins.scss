@@ -1,0 +1,32 @@
+$breakpoints: (
+    xl: "(width < 1280px)",
+    lg: "(width < 1025px)",
+    md: "(width < 600px)",
+);
+
+@mixin mq($breakpoint) {
+    @media #{map-get($breakpoints, $breakpoint)} {
+        @content;
+    }
+}
+
+@mixin hover {
+    @media (hover: hover) {
+
+        &:hover,
+        &:focus {
+            @content;
+        }
+    }
+}
+
+//z-index
+$layer: (
+    modal: 1000,
+    header: 100,
+    default: 1,
+);
+
+@mixin z-index($key) {
+    z-index: map-get($layer, $key);
+}

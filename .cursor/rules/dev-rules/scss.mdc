@@ -1,0 +1,177 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# BEM命名規則
+
+## 基本ルール
+
+BEM（Block Element Modifier）命名規則に従って、CSSクラス名を定義します。
+
+### 1. Block（ブロック）
+- 独立したコンポーネントの最上位要素
+- 例：`header`, `search`, `user`
+
+### 2. Element（要素）
+- Blockに属する要素
+- Blockの後に`__`（アンダースコア2つ）を付け記述
+- 例：`header__logo`, `search__input`, `user__title`
+
+### 3. Modifier（修飾子）
+- BlockやElementの状態やバリエーション
+- 対象の後に`--`（ハイフン2つ）を付け記述
+- 例：`header--fixed`, `search__input--error`, `user--premium`
+
+## SCSSルール
+
+### 1. ファイル編集ルール
+- プロジェクト内にSCSSファイルが存在する場合、直接CSSファイルを編集せず、必ずSCSSファイルを編集すること
+- SCSSファイルの命名は、対応するコンポーネント名と一致させること（例：`User.tsx` → `_user.scss`）
+- パーシャルファイルは必ず`_`（アンダースコア）から始めること
+- 1つのSCSSファイルは1つのコンポーネントまたは目的に対応させること
+### 2. ネスティングルール
+```scss
+/* ✅ 良い例 */
+.block {
+  &__element {
+    /* スタイル定義 */
+    
+    &--modifier {
+      /* スタイル定義 */
+    }
+  }
+}
+
+/* ❌ 悪い例：過度なネスティング */
+.block {
+  &__element {
+    &__subelement {
+      &__deepelement {
+        /* スタイル定義 */
+      }
+    }
+  }
+}
+```
+
+### 3. 変数とミックスインの使用
+```scss
+// 変数は_variables.scssで一元管理
+$primary-color: #007bff;
+$spacing-unit: 8px;
+
+// ミックスインは_mixins.scssで一元管理
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// 使用例
+.block {
+  color: $primary-color;
+  padding: $spacing-unit;
+  @include flex-center;
+}
+```
+
+### 4. インポート順序
+```scss
+// 1. 設定ファイル
+@import 'config/variables';
+@import 'config/mixins';
+
+// 2. ベース設定
+@import 'base/reset';
+@import 'base/typography';
+
+// 3. レイアウト
+@import 'layout/grid';
+@import 'layout/header';
+
+// 4. コンポーネント
+@import 'components/button';
+@import 'components/form';
+```
+
+## 具体例
+
+```css
+/* Block */
+.user {
+  /* スタイル定義 */
+}
+
+/* Element */
+.user__image {
+  /* スタイル定義 */
+}
+
+.user__title {
+  /* スタイル定義 */
+}
+
+/* Modifier */
+.user--premium {
+  /* スタイル定義 */
+}
+
+.user__title--highlighted {
+  /* スタイル定義 */
+}
+```
+
+## 禁止事項
+
+1. セレクタのネスト過剰な使用
+```css
+/* ❌ 悪い例 */
+.user__content__title__text {
+  /* スタイル定義 */
+}
+
+/* ✅ 良い例 */
+.user__title-text {
+  /* スタイル定義 */
+}
+```
+
+2. 一般的なHTML要素名との混在
+```css
+/* ❌ 悪い例 */
+.user div {
+  /* スタイル定義 */
+}
+
+/* ✅ 良い例 */
+.user__container {
+  /* スタイル定義 */
+}
+```
+
+## HTML/PHPでの使用例
+
+<div class="user">
+  <img class="user__img" src="..." alt="..." />
+  <div class="user__content">
+    <h2 class="user__title">ユーザー名</h2>
+    <p class="user__description">説明文</p>
+  </div>
+</div>
+
+## 命名規則のベストプラクティス
+
+1. Block名は具体的で意味のある名前を使用
+2. Element名はBlockの文脈で理解できる名前を使用
+3. Modifier名は状態や変更内容が明確に分かる名前を使用
+
+## 注意事項
+
+- BEMの階層は2階層までとし、それ以上の階層化は避ける
+- Modifierは必要な場合のみ使用し、過剰な使用は避ける
+- コンポーネント間で一貫性のある命名を維持する
+- PHPの条件分岐でModifierを追加する場合は、基本クラスと分けて記述する
+- SCSSファイルが存在する場合は、必ずSCSSファイルを編集し、直接CSSファイルを編集しない
+- 共通の変数やミックスインは、専用のパーシャルファイルで管理する
+- メディアクエリは、コンポーネント内で定義し、一貫性のあるブレークポイントを使用する

@@ -1,0 +1,74 @@
+@use "../global" as *;
+
+/*-----------------------------------------------
+base
+-----------------------------------------------*/
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-family-base);
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-base);
+    color: var(--color-text);
+}
+
+img {
+    vertical-align: bottom;
+    width: 100%;
+    height: auto;
+}
+
+a {
+    transition: all 0.3s ease;
+
+    @include hover {
+        color: var(--color-link-hover);
+    }
+}
+
+a[href^="tel:"] {
+    pointer-events: none;
+    cursor: default;
+
+    @include mq(md) {
+        pointer-events: auto;
+        cursor: pointer;
+    }
+}
+
+.container {
+    width: $container-max-width;
+    margin-inline: auto;
+
+    &__inner {
+        padding: 80px 0;
+    }
+
+    @include mq(md) {
+        width: 94%;
+
+        &__inner {
+            padding: 40px 0;
+        }
+    }
+}
+
+.section {
+    &--white {
+        color: var(--color-text-white);
+    }
+
+    &--center {
+        text-align: center;
+    }
+
+    &__title {
+        font-family: var(--font-family-title);
+        font-weight: 700;
+        line-height: 1.75;
+        letter-spacing: 0.1em;
+    }
+}

@@ -1,0 +1,32 @@
+@use "../global" as *;
+
+:root {
+    // ブランドカラー
+    --color-brand: #{$color-brand}; // メインブランドカラー（ロゴ、アクセントなど）
+    --color-brand-sub: #{$color-brand-sub}; // サブブランドカラー（背景、コントラストなど）
+
+    // テキストカラー
+    --color-text: #{$color-text}; // 本文テキスト
+    --color-nav: #{$color-nav}; // ナビゲーションテキスト
+
+    // 機能的なカラー
+    --color-required: #{$color-required}; // 必須マーク
+
+    // 背景カラー
+
+
+
+    // フォント
+    --font-family-base: #{$font-family-base};
+    --font-family-title: #{$font-family-title};
+    --font-family-nav: #{$font-family-nav};
+
+    // フォントサイズ（10px = 1rem）
+    --font-size-base: #{$font-size-base};
+    --font-size-page-title: #{$font-size-page-title};
+
+    // スペーシング
+    --line-height-base: #{$line-height-base};
+    // レイアウト関連
+    --container-max-width: #{$container-max-width};
+}

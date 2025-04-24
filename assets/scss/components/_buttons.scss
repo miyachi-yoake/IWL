@@ -1,0 +1,40 @@
+@use "../global" as *;
+
+/*-----------------------------------------------
+buttons
+-----------------------------------------------*/
+.btn {
+    display: inline-block;
+    font-size: 1.8rem;
+    color: #fff;
+    width: 240px;
+    font-weight: 700;
+    background: var(--color-brand);
+    padding: 12px 0;
+    text-align: center;
+
+    @include hover {
+        opacity: .8;
+        color: #fff;
+    }
+}
+
+.contact_btn {
+    display: inline-block;
+    font-size: 2.4rem;
+    width: 468px;
+    color: #fff;
+    background: var(--color-btn-form);
+    padding: 22px 0;
+    text-align: center;
+
+    @include hover {
+        opacity: .8;
+        color: #fff;
+    }
+
+    @include mq(md) {
+        width: 300px;
+
+    }
+}
