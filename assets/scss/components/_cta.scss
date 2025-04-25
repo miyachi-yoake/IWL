@@ -1,0 +1,77 @@
+@use "../global" as *;
+
+/*-----------------------------------------------
+contact-cta
+-----------------------------------------------*/
+.contact-cta {
+    max-width: 1440px;
+    width: 1340 / 1440 * 100vw;
+    margin-left: auto;
+    margin-bottom: 0;
+    border-radius: 12px 0 0 12px;
+    background: var(--color-brand);
+    color: var(--color-text-white);
+    padding: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+
+    &__inner {
+        max-width: 474px;
+    }
+
+    &__title {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        font-weight: 700;
+        line-height: 1.5;
+        margin-bottom: 24px;
+
+        .ja {
+            font-size: 3.6rem;
+        }
+
+        .en {
+            font-family: "Work Sans", sans-serif;
+            font-size: 1.4rem;
+            text-transform: uppercase;
+        }
+    }
+
+    &__btn {
+        font-family: "Work Sans", sans-serif;
+        width: 300px;
+        border-radius: 36px;
+        border: 1px solid #fff;
+        padding: 25.5px 0;
+        text-align: center;
+        font-size: 1.8rem;
+        font-weight: 700;
+        line-height: 1;
+        text-transform: uppercase;
+        position: relative;
+
+        &::before {
+            content: "";
+            background-image: url(../img/common/arrow-right.svg);
+            background-size: contain;
+            background-repeat: no-repeat;
+            width: 15px;
+            height: 12px;
+            position: absolute;
+            top: 50%;
+            right: 24px;
+            transform: translateY(-50%);
+            transition: all 0.3s ease-in-out;
+        }
+
+        @include hover {
+            opacity: 0.8;
+        }
+
+    }
+
+
+}

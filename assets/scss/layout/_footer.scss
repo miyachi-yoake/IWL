@@ -3,66 +3,43 @@
 /*footer
 -----------------------------------------------*/
 .footer {
-    position: relative;
-    z-index: 1;
     background: #FFFFFF;
-    font-weight: 700;
+    padding-bottom: 100px;
+    font-family: var(--font-family-nav);
+    max-width: var(--container-max-width);
+    margin: 0 auto;
 
     &__inner {
-        padding: 32px 0 22px;
-        font-weight: 700;
+        padding: 100px 0;
         color: var(--color-nav);
-        max-width: var(--container-max-width);
-        margin: 0 auto;
         display: flex;
         align-items: center;
         justify-content: space-between;
     }
 
     &__logo {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
         min-width: 385px;
-        font-family: "noto serif jp", serif;
-        font-size: 32px;
-        line-height: 1.75;
-        letter-spacing: 0.1em;
-
-        margin-bottom: 12px;
     }
 
-    &__address {
-        font-size: 1.4rem;
-        font-weight: 700;
-        padding: 10px 0px;
-        line-height: 1.5;
-    }
+
 
     &__list {
+        font-weight: 500;
+        text-transform: uppercase;
         display: flex;
         flex-wrap: wrap;
+        gap: 40px;
+
     }
 
     &__item {
-        font-size: 1.6rem;
-        padding: 11px 12px;
-        margin: 0 4px;
-        border-right: 1px solid rgb(#000, 0.16);
-
-        &:last-child {
-            border-right: none;
-        }
+        font-size: 1.4rem;
     }
 
     &__copyright {
-        font-size: 1.4rem;
-        text-align: center;
-        background: var(--color-brand);
-        color: #fff;
-        padding: 20px;
-        letter-spacing: 0.04em;
-        line-height: 1;
+        font-size: 1.3rem;
+        color: rgb(#333, .7);
+        text-align: right;
 
     }
 
@@ -79,27 +56,14 @@
         }
 
         &__logo {
-            padding: 0;
             margin-inline: auto;
         }
 
-        &__address {
-            text-align: center;
-        }
     }
 
     @include mq(md) {
         &__logo {
-            font-size: 20px;
             min-width: 270px;
-        }
-
-        &__item {
-            border-right: none;
-        }
-
-        &__copyright {
-            font-size: 1.2rem;
         }
     }
 }

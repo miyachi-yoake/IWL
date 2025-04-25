@@ -1,0 +1,166 @@
+@charset "UTF-8";
+
+/*single page
+-----------------------------------------------*/
+
+.date {
+    font-size: 16px;
+    color: #888;
+}
+
+
+.single {
+    .single__header {
+        margin-bottom: 40px;
+    }
+
+    .single__title {
+        font-size: 36px;
+        font-weight: 700;
+        line-height: 1.5;
+    }
+
+    article {
+        max-width: 840px;
+        margin: 169px auto 100px;
+    }
+}
+
+
+// エディター内のCSS
+.wysiwyg-editor {
+
+    h2,
+    h3,
+    h4,
+    p,
+    ul,
+    ol,
+    table,
+    img,
+    a,
+    blockquote {
+        overflow: auto;
+    }
+
+
+
+    h2 {
+        font-size: 30px;
+        font-weight: bold;
+        margin: 40px 0;
+    }
+
+    h3 {
+        font-size: 20px;
+        font-weight: 700;
+        margin: 40px 0 10px;
+        border-bottom: 1px solid #DAD5C7;
+    }
+
+    h4 {
+        font-size: 16px;
+        font-weight: 700;
+        margin: 10px 0;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    h4:before {
+        content: "";
+        border: 1px solid #333;
+        width: 16px;
+        height: 1px;
+    }
+
+    h2:first-child,
+    h2+h3,
+    h3+h4 {
+        margin-bottom: 10px;
+    }
+
+    img {
+        margin: 40px 0;
+        border-radius: 10px;
+    }
+
+    table {
+        margin: 40px 0;
+        border-collapse: collapse;
+    }
+
+    table th,
+    table td {
+        font-weight: 400;
+        border: 1px solid #E3E3E3;
+        padding: 12px;
+    }
+
+
+    p,
+    ul,
+    ol {
+        margin: 0 0 16px 0;
+        font-size: 14px;
+        line-height: 2;
+    }
+
+    ul,
+    ol {
+        padding-left: 20px;
+    }
+
+    ul {
+        list-style-type: disc;
+        list-style-position: outside;
+    }
+
+    ol {
+        list-style-type: decimal;
+    }
+
+
+
+    .wp-block-table figcaption {
+        font-size: 14px;
+        line-height: 1.6;
+        color: #666;
+        margin: 0 0 10px 0;
+    }
+
+    blockquote {
+        margin: 0 0 40px 0;
+        padding: 0 0 0 30px;
+        border-left: 2px solid #B9AC88;
+    }
+
+    blockquote cite {
+        font-size: 14.22px;
+        margin-bottom: 10px;
+    }
+
+    a {
+        text-decoration: underline;
+    }
+
+    a:hover,
+    a:focus {
+        opacity: 0.8;
+    }
+
+}
+
+
+// ブロック対応予定
+.orignal-table01,
+.orignal-table02 {
+    font-size: 14px;
+    font-weight: 500;
+    border-collapse: collapse;
+    margin: 40px 0;
+
+    th {
+        background: #F6F6F6;
+    }
+}

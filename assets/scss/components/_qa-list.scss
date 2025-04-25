@@ -1,0 +1,122 @@
+@use "../global" as *;
+
+/*-----------------------------------------------
+qa-list
+-----------------------------------------------*/
+.qa-list {
+    margin: 40px 0;
+
+    .qa-6:first-child {
+        border-top: 1px solid #BFBFBF;
+    }
+}
+
+
+.qa-6 {
+    max-width: 100%;
+    width: 100%;
+    border-bottom: 1px solid #BFBFBF;
+}
+
+.qa-6 summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    padding: 30px 40px;
+    color: #333333;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.qa-6 summary::before,
+.qa-6 p::before {
+    position: absolute;
+    left: 0;
+    font-weight: 500;
+    font-size: 24px;
+}
+
+.qa-6 summary::before {
+    color: #7D6E4A;
+    content: "Q.";
+    font-family: "Work Sans";
+}
+
+.qa-6 summary::after {
+    content: '';
+    width: 16px;
+    height: 2px;
+    background: #7D6E4A;
+    position: absolute;
+    right: 1em;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: all .3s ease;
+}
+
+.qa-6 summary .plus-vertical {
+    content: '';
+    width: 2px;
+    height: 16px;
+    background: #7D6E4A;
+    position: absolute;
+    right: calc(1em + 7px);
+    top: 50%;
+    transform: translateY(-50%);
+    transition: all .3s ease;
+}
+
+.qa-6[open] summary {
+    padding-bottom: 16px;
+}
+
+.qa-6[open] summary .plus-vertical {
+    transform: translateY(-50%) rotate(90deg);
+    opacity: 0;
+}
+
+.qa-6[open] summary::after {
+    transform: translateY(-50%);
+    animation: moveToBottom .3s ease forwards;
+}
+
+.qa-6:not([open]) summary::after {
+    animation: moveToCenter .3s ease forwards;
+}
+
+.qa-6 p {
+    position: relative;
+    transform: translateY(-10px);
+    opacity: 0;
+    margin: 0;
+    padding: 0 40px 30px 40px;
+    color: #333;
+    transition: transform .3s, opacity .5s;
+}
+
+
+.qa-6[open] p {
+    transform: none;
+    opacity: 1;
+}
+
+@keyframes moveToBottom {
+    0% {
+        top: 50%;
+    }
+
+    100% {
+        top: calc(100% - 16px);
+    }
+}
+
+@keyframes moveToCenter {
+    0% {
+        top: calc(100% - 16px);
+    }
+
+    100% {
+        top: 50%;
+    }
+}
