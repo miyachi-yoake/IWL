@@ -120,3 +120,98 @@ qa-list
         top: 50%;
     }
 }
+
+
+.section-qa-list {
+    .qa:first-child {
+        border-top: none;
+    }
+}
+
+
+.qa {
+    max-width: 100%;
+    width: 100%;
+    border-top: 1px solid #BFBFBF;
+}
+
+.qa summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    padding: 30px 40px;
+    color: #333333;
+    cursor: pointer;
+}
+
+.qa summary::before,
+.qa p::before {
+    position: absolute;
+    left: 0;
+    font-size: 24px;
+}
+
+.qa summary::before {
+    color: #7D6E4A;
+    content: "Q.";
+    font-family: "Work Sans";
+}
+
+.qa summary::after {
+    content: '';
+    width: 16px;
+    height: 2px;
+    background: #7D6E4A;
+    position: absolute;
+    right: 1em;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: all .3s ease;
+}
+
+.qa summary .plus-vertical {
+    content: '';
+    width: 2px;
+    height: 16px;
+    background: #7D6E4A;
+    position: absolute;
+    right: calc(1em + 7px);
+    top: 50%;
+    transform: translateY(-50%);
+    transition: all .3s ease;
+}
+
+.qa[open] summary {
+    padding-bottom: 16px;
+}
+
+.qa[open] summary .plus-vertical {
+    transform: translateY(-50%) rotate(90deg);
+    opacity: 0;
+}
+
+.qa[open] summary::after {
+    transform: translateY(-50%);
+    animation: moveToBottom .3s ease forwards;
+}
+
+.qa:not([open]) summary::after {
+    animation: moveToCenter .3s ease forwards;
+}
+
+.qa p {
+    position: relative;
+    transform: translateY(-10px);
+    opacity: 0;
+    margin: 0;
+    padding: 0 40px 30px 40px;
+    color: #333;
+    transition: transform .3s, opacity .5s;
+}
+
+
+.qa[open] p {
+    transform: none;
+    opacity: 1;
+}

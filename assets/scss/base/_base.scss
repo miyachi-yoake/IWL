@@ -15,6 +15,10 @@ body {
     color: var(--color-text);
 }
 
+main {
+    padding-top: 100px;
+}
+
 img {
     vertical-align: bottom;
     width: 100%;
@@ -43,8 +47,17 @@ a[href^="tel:"] {
     width: $container-max-width;
     margin-inline: auto;
 
+
     &__inner {
-        padding: 80px 0;
+        padding: 64px;
+
+        &--white-bg {
+            background-color: #fff;
+        }
+
+        &--rounded {
+            border-radius: 12px;
+        }
     }
 
     @include mq(md) {
@@ -57,7 +70,14 @@ a[href^="tel:"] {
 }
 
 .section {
-    margin-bottom: 100px;
+    &--ptb {
+        padding-top: 100px;
+        padding-bottom: 100px;
+    }
+
+    &--pt {
+        padding-top: 100px;
+    }
 
     &__title {
         font-family: var(--font-family-title);
@@ -65,4 +85,26 @@ a[href^="tel:"] {
         line-height: 1.75;
         letter-spacing: 0.1em;
     }
+}
+
+.text-center {
+    text-align: center;
+}
+
+.bg {
+    background-color: var(--color-bg);
+}
+
+.bg-qa {
+    background-color: #F6F4EE;
+}
+
+.mb-100 {
+    margin-bottom: 100px;
+}
+
+
+
+.mb-48 {
+    margin-bottom: 48px;
 }
