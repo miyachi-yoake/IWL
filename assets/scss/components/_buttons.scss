@@ -4,18 +4,25 @@
 buttons
 -----------------------------------------------*/
 .btn {
-    display: inline-block;
-    font-size: 1.8rem;
-    color: #fff;
-    width: 240px;
-    font-weight: 700;
-    background: var(--color-brand);
-    padding: 12px 0;
-    text-align: center;
+    display: inline-flex;
+    gap: 14px;
+    align-items: center;
+    font-size: 1.6rem;
+    color: #333;
+
+    &:after {
+        content: "";
+        display: block;
+        width: 40px;
+        height: 40px;
+        background-image: url(../img/common/brn_next_arrow.svg);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
 
     @include hover {
         opacity: .8;
-        color: #fff;
     }
 }
 
