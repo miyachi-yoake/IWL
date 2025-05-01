@@ -73,5 +73,23 @@ contact-cta
 
     }
 
+    @include mq(lg) {
+        padding: 48px 32px;
+        flex-direction: column;
+        gap: 48px;
+    }
+
+    @include mq(md) {
+        width: 374 / 390 * 100vw;
+
+        &__title {
+            .ja {
+                font-size: 2.4rem;
+            }
+
+
+        }
+    }
+
 
 }

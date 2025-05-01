@@ -59,11 +59,26 @@
             margin-inline: auto;
         }
 
+        &__copyright {
+            text-align: center;
+        }
+
     }
 
     @include mq(md) {
+        padding-bottom: 48px;
+
+        &__inner {
+            padding: 48px 0;
+        }
+
         &__logo {
+            max-width: 358px;
             min-width: 270px;
+        }
+
+        &__nav {
+            display: none;
         }
     }
 }

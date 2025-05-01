@@ -87,6 +87,22 @@ a[href^="tel:"] {
     }
 }
 
+.badge-list {
+    display: flex;
+    gap: 10px;
+}
+
+.badge {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 4px;
+    background-color: #F6F4EE;
+    color: #7D6E4A;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.5;
+}
+
 .text-center {
     text-align: center;
 }
@@ -101,6 +117,10 @@ a[href^="tel:"] {
 
 .mb-100 {
     margin-bottom: 100px;
+
+    @include mq(md) {
+        margin-bottom: 48px;
+    }
 }
 
 

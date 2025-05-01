@@ -84,3 +84,34 @@ document.addEventListener('DOMContentLoaded', function () {
 //         disableOnInteraction: false,
 //     },
 // });
+
+// ドロップダウンメニューの制御
+document.addEventListener('DOMContentLoaded', () => {
+    const dropdownToggles = document.querySelectorAll('.nav__dropdown-toggle');
+
+    dropdownToggles.forEach(toggle => {
+        toggle.addEventListener('click', (e) => {
+            const parent = toggle.closest('.nav__item--has-child');
+            const isActive = parent.classList.contains('is-active');
+
+            // 他のドロップダウンを閉じる
+            document.querySelectorAll('.nav__item--has-child').forEach(item => {
+                if (item !== parent) {
+                    item.classList.remove('is-active');
+                }
+            });
+
+            // クリックされたドロップダウンの状態を切り替え
+            parent.classList.toggle('is-active');
+        });
+    });
+
+    // ドロップダウン外のクリックで閉じる
+    document.addEventListener('click', (e) => {
+        if (!e.target.closest('.nav__item--has-child')) {
+            document.querySelectorAll('.nav__item--has-child').forEach(item => {
+                item.classList.remove('is-active');
+            });
+        }
+    });
+});

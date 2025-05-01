@@ -112,6 +112,10 @@ page
         flex-direction: column;
         gap: 40px;
 
+        &--gap-24 {
+            gap: 24px;
+        }
+
         &:first-child {
             padding-top: 0;
         }

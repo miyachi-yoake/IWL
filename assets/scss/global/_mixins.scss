@@ -1,7 +1,7 @@
 $breakpoints: (
     xl: "(width < 1280px)",
     lg: "(width < 1025px)",
-    md: "(width < 600px)",
+    md: "(width < 768px)",
 );
 
 @mixin mq($breakpoint) {
