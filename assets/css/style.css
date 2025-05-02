@@ -292,6 +292,11 @@ body {
 main {
   padding-top: 100px;
 }
+@media (width < 768px) {
+  main {
+    padding-top: 60px;
+  }
+}
 
 img {
   vertical-align: bottom;
@@ -912,7 +917,7 @@ header
   border: none;
   padding: 0;
   color: var(--color-nav);
-  font-weight: 400;
+  font-weight: 500;
   font-family: var(--font-family-nav);
   font-size: inherit;
   text-transform: uppercase;
@@ -1370,10 +1375,10 @@ page
   color: #888;
 }
 
-.single .single__header {
+.single__header {
   margin-bottom: 40px;
 }
-.single .single__title {
+.single__title {
   font-size: 36px;
   font-weight: 700;
   line-height: 1.5;
@@ -1381,6 +1386,15 @@ page
 .single article {
   max-width: 840px;
   margin: 169px auto 100px;
+}
+@media (width < 768px) {
+  .single__title {
+    font-size: 28px;
+  }
+  .single article {
+    margin: 48px auto;
+    padding-inline: 16px;
+  }
 }
 
 .wysiwyg-editor h2,
@@ -1399,6 +1413,11 @@ page
   font-size: 30px;
   font-weight: bold;
   margin: 40px 0;
+}
+@media (width < 768px) {
+  .wysiwyg-editor h2 {
+    font-size: 24px;
+  }
 }
 .wysiwyg-editor h3 {
   font-size: 20px;
