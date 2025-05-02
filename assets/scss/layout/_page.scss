@@ -49,20 +49,63 @@ page
         img {
             border-radius: 0 20px 20px 0;
             aspect-ratio: 1440 / 400;
+
         }
 
     }
 
+    @include mq(md) {
+        &__header-title {
+            max-width: 100%;
+            padding: 48px 16px;
+
+            .ja {
+                padding: 16px 0;
+                font-size: 2.8rem;
+                line-height: 1.5;
+            }
+        }
+
+        &__thumbnail {
+            width: 374 / 390 * 100%;
+            margin-bottom: 48px;
+
+            img {
+
+                aspect-ratio: 374 /280;
+            }
+        }
+
+        &__title {
+            font-size: 2.4rem;
+        }
+    }
 
 }
 
 
 .intro {
+    &__title {
+        font-size: 3.6rem;
+        font-weight: 700;
+        line-height: 1.5;
+        margin-bottom: 8px;
+    }
+
     &__inner {
         text-align: center;
         margin-bottom: 48px;
     }
 
+    @include mq(md) {
+        &__title {
+            font-size: 2.4rem;
+        }
+
+        &__text {
+            text-align: left;
+        }
+    }
 }
 
 .page-service {
@@ -101,6 +144,13 @@ page
 
             .page-service__sub-title {
                 font-size: 1.6rem;
+            }
+        }
+
+        @include mq(md) {
+            &--row {
+                flex-direction: column;
+                gap: 40px;
             }
         }
     }
@@ -163,6 +213,43 @@ page
         display: flex;
         gap: 40px;
     }
+
+    @include mq(lg) {
+        &__inner {
+            padding: 0 0 48px;
+        }
+
+        &__img {
+            width: 100%;
+        }
+
+        &__content {
+            flex-direction: column;
+        }
+
+        &__text-box {
+            width: 100%;
+        }
+
+        &__flex {
+            flex-direction: column;
+        }
+    }
+
+    @include mq(md) {
+
+        &__title {
+            font-size: 2rem;
+        }
+
+        &__sub-title {
+            font-size: 1.6rem;
+        }
+
+        &__item {
+            gap: 24px;
+        }
+    }
 }
 
 .detail {
@@ -211,5 +298,15 @@ page
         &:last-child {
             border-right: none;
         }
+    }
+
+    @include mq(lg) {
+        &__item {
+            padding: 32px 16px;
+        }
+    }
+
+    @include mq(md) {
+        flex-direction: column;
     }
 }

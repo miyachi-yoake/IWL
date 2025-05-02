@@ -59,13 +59,16 @@
             <span class="ja">スポンサーシップについて</span>
         </h1>
         <div class="page__thumbnail">
-            <img src="./assets/img/service/sponsorship_01.jpg" srcset="./assets/img/service/sponsorship_01.jpg 1x, ./assets/img/service/sponsorship_01_2x.jpg 2x" alt="スポンサーシップについて サムネイル" width="1440" height="400">
+            <picture>
+                <source media="(max-width: 767px)" srcset="./assets/img/service/sponsorship_01_sp.jpg 1x, ./assets/img/service/sponsorship_01_sp_2x.jpg 2x">
+                <img src="./assets/img/service/sponsorship_01.jpg" srcset="./assets/img/service/sponsorship_01.jpg 1x, ./assets/img/service/sponsorship_01_2x.jpg 2x" alt="スポンサーシップについて サムネイル" width="1440" height="400">
+            </picture>
         </div>
 
         <section class="intro">
             <div class="container">
                 <div class="intro__inner">
-                    <h2 class="page__title">スポンサーシップとは</h2>
+                    <h2 class="intro__title">スポンサーシップとは</h2>
                     <p class="intro__text">テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。</p>
                 </div>
 
@@ -162,7 +165,7 @@
 
         <section class="section">
             <div class="container">
-                <h2 class="page-service__title mb-48">弊社でサポートしたこと</h2>
+                <h2 class="page-service__title mb-48-md">弊社でサポートしたこと</h2>
                 <ul class="page-service__list">
                     <li class="page-service__item">
                         <div class="page-service__flex">

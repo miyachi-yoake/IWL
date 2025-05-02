@@ -24,6 +24,10 @@ buttons
     @include hover {
         opacity: .8;
     }
+
+    @include mq(md) {
+        font-size: 1.4rem;
+    }
 }
 
 .contact_btn {
@@ -43,5 +47,11 @@ buttons
     @include mq(md) {
         width: 300px;
 
+    }
+}
+
+.link {
+    @include mq(md) {
+        text-align: right;
     }
 }
