@@ -54,6 +54,28 @@ page
 
     }
 
+
+
+    &__item {
+
+        &:before {
+            position: relative;
+            top: -2px;
+            left: 0;
+
+            display: inline-block;
+
+            width: 4px;
+            height: 4px;
+
+            content: '';
+
+            border-radius: 100%;
+            background: #333;
+            margin: 2px .5em;
+        }
+    }
+
     @include mq(md) {
         &__header-title {
             max-width: 100%;
@@ -92,9 +114,61 @@ page
         margin-bottom: 8px;
     }
 
+    &__sub-title {
+        font-size: 3rem;
+        font-weight: 700;
+        line-height: 1.5;
+    }
+
+
     &__inner {
         text-align: center;
         margin-bottom: 48px;
+    }
+
+    &__wrapper {
+        padding: 64px 96px;
+        border-radius: 12px;
+        background-color: var(--color-brand);
+        color: #fff;
+    }
+
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 32px;
+    }
+
+    &__item {
+        color: #333;
+        border-radius: 7px;
+        background: #fff;
+        padding: 32px;
+        text-align: center;
+        position: relative;
+
+        &::before {
+            position: absolute;
+            top: -10px;
+            left: 7px;
+            content: "";
+            width: 24px;
+            height: 17px;
+            background-image: url(../img/service/icon.svg);
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+
+        h4 {
+            width: 100%;
+            font-size: 2rem;
+            font-weight: 700;
+            line-height: 1.5;
+            height: 56px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
     }
 
     @include mq(md) {
@@ -113,6 +187,11 @@ page
         padding: 64px 0;
     }
 
+    &__header {
+        text-align: center;
+        height: 60px;
+    }
+
     &__title {
         font-size: 3rem;
         font-weight: 700;
@@ -126,6 +205,9 @@ page
         font-weight: 700;
         line-height: 1.5;
 
+        &--center {
+            text-align: center;
+        }
     }
 
     &__list {
@@ -173,6 +255,54 @@ page
         &:last-child {
             border-bottom: none;
         }
+    }
+
+    &__num-list {
+        display: flex;
+        gap: 20px;
+    }
+
+    &__num-item {
+        display: flex;
+        flex-direction: column;
+        border-radius: 12px;
+        background: #fff;
+        width: 400 / 1440 * 100vw;
+
+    }
+
+    &__num-item-header {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        align-items: center;
+
+    }
+
+    &__num-item-num {
+        color: #B9AC88;
+        font-size: 1.6rem;
+        font-weight: 700;
+        line-height: 1;
+        font-family: var(--font-family-title);
+    }
+
+    &__num-item-title {
+        font-size: 2rem;
+        font-weight: 700;
+        line-height: 1.5;
+    }
+
+    &__textbox {
+        padding: 64px 40px;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    &__num-img {
+        border-radius: 0 0 12px 12px;
+        overflow: hidden;
     }
 
     &__content {
@@ -309,4 +439,161 @@ page
     @include mq(md) {
         flex-direction: column;
     }
+}
+
+.support {
+    &__bold {
+        font-weight: 700;
+    }
+
+    &__inner {
+        background: #fff;
+        padding: 40px 64px;
+        border-radius: 12px;
+    }
+
+    &__list {
+        display: flex;
+        justify-content: space-between;
+        gap: 24px;
+    }
+
+    &__item {
+        display: flex;
+        gap: 24px;
+        width: 27.6%;
+        position: relative;
+
+        &::after {
+            content: "";
+            display: block;
+            width: 1px;
+            height: 68.3px;
+            background: #DAD5C7;
+            position: absolute;
+            top: 0;
+            right: -48px;
+        }
+
+        &:last-child {
+            &::after {
+                display: none;
+            }
+        }
+    }
+
+    &__title {
+        font-size: 1.6rem;
+        font-weight: 700;
+        line-height: 1.75;
+
+    }
+
+    &__icon {
+        width: 42px;
+        min-width: 42px;
+    }
+
+    &__point {
+        font-size: 2.4rem;
+        font-weight: 700;
+        line-height: 1.5;
+        text-align: center;
+
+        span {
+
+            color: #7D6E4A;
+            background: linear-gradient(transparent 70%, rgba(185, 172, 136, 0.2) 70%);
+        }
+    }
+
+    &__textbox {
+        padding: 64px;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    &__flex {
+        display: flex;
+        justify-content: space-between;
+        background: #fff;
+        border-radius: 12px;
+    }
+
+    &__read {
+        font-size: 2.4rem;
+        font-weight: 700;
+        line-height: 1.5;
+
+        span {
+            color: #7D6E4A;
+        }
+    }
+
+    &__img {
+        overflow: hidden;
+        border-radius: 0 12px 12px 0;
+    }
+
+
+}
+
+.page-business {
+    border-radius: 12px;
+    background: #A49365;
+    color: #fff;
+    padding: 64px 96px;
+
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    &__item {
+        padding: 32px 40px;
+
+        &:first-child {
+            border-right: 1px solid #fff;
+            border-bottom: 1px solid #fff;
+        }
+
+        &:nth-child(2) {
+            border-bottom: 1px solid #fff;
+        }
+
+        &:nth-child(3) {
+            border-right: 1px solid #fff;
+        }
+    }
+
+    &__item-header {
+        font-size: 140px;
+        font-weight: 600;
+        line-height: 1.4;
+        letter-spacing: -7px;
+
+        span {
+            font-size: 56px;
+            line-height: 1;
+            letter-spacing: 0;
+            margin-left: 8px;
+        }
+    }
+
+    &__title {
+        font-size: 2rem;
+        font-weight: 700;
+        line-height: 1.5;
+        margin-bottom: 8px;
+    }
+
+
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 26px;
+
 }

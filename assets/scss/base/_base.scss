@@ -6,6 +6,7 @@ base
 html {
     font-size: 62.5%;
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 body {
@@ -13,6 +14,7 @@ body {
     font-size: var(--font-size-base);
     line-height: var(--line-height-base);
     color: var(--color-text);
+    overflow-x: hidden;
 }
 
 main {
@@ -126,6 +128,17 @@ a[href^="tel:"] {
     line-height: 1.5;
 }
 
+.triangle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+
+    &__img {
+        width: 25.3px;
+    }
+}
+
 .text-center {
     text-align: center;
 }
@@ -146,7 +159,13 @@ a[href^="tel:"] {
     }
 }
 
+.mb-64 {
+    margin-bottom: 64px;
 
+    @include mq(md) {
+        margin-bottom: 32px;
+    }
+}
 
 .mb-48 {
     margin-bottom: 48px;

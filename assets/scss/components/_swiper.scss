@@ -1,0 +1,96 @@
+@use "../global" as *;
+
+/*-----------------------------------------------
+swiper
+-----------------------------------------------*/
+
+.swiper-container {
+    width: 1340 / 1440 * 100vw;
+    margin-left: auto;
+}
+
+.swiper-button-prev:after,
+.swiper-button-next:after {
+    content: "";
+    /*contentを空にする*/
+}
+
+.swiper-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 32px;
+
+    .page__title {
+        margin-bottom: 0;
+        text-align: left;
+    }
+
+    .swiper__nav {
+        display: flex;
+        gap: 16px;
+    }
+
+    .swiper-button-prev,
+    .swiper-button-next {
+        position: static;
+        width: 40px;
+        height: 40px;
+        background: none;
+        border: none;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+
+        img {
+            width: 40px;
+            height: 40px;
+            display: block;
+        }
+    }
+}
+
+.swiper {
+
+    &__img,
+    &__title,
+    &__text {
+        margin-bottom: 15px;
+    }
+
+    &__img {
+        overflow: hidden;
+        border-radius: 12px;
+    }
+
+    &__title {
+        font-weight: 700;
+    }
+
+
+}
+
+@media (max-width: 767px) {
+    .swiper-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+
+        .swiper__nav {
+            gap: 8px;
+        }
+
+        .swiper-button-prev,
+        .swiper-button-next {
+            width: 40px;
+            height: 40px;
+
+            img {
+                width: 40px;
+                height: 40px;
+            }
+        }
+    }
+}

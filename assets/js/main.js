@@ -115,3 +115,61 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
+// // swiper
+const swiper = new Swiper(".swiper", {
+    loop: true,
+    // speed: 2000,
+    slidesPerView: 2.2,
+    // slidesPerGroup: 2.2,
+    spaceBetween: 30,
+    autoHeight: true,
+    navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+    },
+    breakpoints: {
+        0: {
+            slidesPerView: 1.1,
+            spaceBetween: 16,
+        },
+        768: {
+            slidesPerView: 2.7,
+
+            spaceBetween: 30,
+        }
+    }
+});
+
+// =============================
+// main-canvas__cath01→cath02 順次ふわっと表示
+// =============================
+// document.addEventListener('DOMContentLoaded', () => {
+//     const cath01 = document.querySelector('.main-canvas__cath01');
+//     const cath02 = document.querySelector('.main-canvas__cath02');
+//     if (!('IntersectionObserver' in window) || !cath01 || !cath02) return;
+//
+//     let timer = null;
+//
+//     const observer = new IntersectionObserver((entries) => {
+//         entries.forEach(entry => {
+//             if (entry.target === cath01) {
+//                 if (entry.isIntersecting) {
+//                     cath01.classList.add('main-canvas__cath--active');
+//                     // 700ms後にcath02を表示
+//                     timer = setTimeout(() => {
+//                         cath02.classList.add('main-canvas__cath--active');
+//                     }, 700);
+//                 } else {
+//                     cath01.classList.remove('main-canvas__cath--active');
+//                     cath02.classList.remove('main-canvas__cath--active');
+//                     if (timer) clearTimeout(timer);
+//                 }
+//             }
+//         });
+//     }, {
+//         threshold: 0.2
+//     });
+//
+//     observer.observe(cath01);
+// });
