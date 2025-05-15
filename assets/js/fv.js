@@ -15,7 +15,7 @@ window.addEventListener("resize", resize);
 /** エンターフレームのタイミングです。 */
 function tick() {
     requestAnimationFrame(tick);
-    const time = Date.now() / 6000;
+    const time = Date.now() / 12000;
     draw(time);
 }
 
@@ -23,7 +23,7 @@ function tick() {
 function draw(time) {
     // 画面をリセット
     context.clearRect(0, 0, stageW, stageH);
-    context.lineWidth = 0.5;
+    context.lineWidth = 0.3;
 
     // ここから回転処理
     context.save();
@@ -31,9 +31,9 @@ function draw(time) {
     context.rotate(160 * Math.PI / 180);
     context.translate(-stageW / 2, -stageH / 2);
 
-    const amplitude = stageH / 4; // 振幅（縦幅)の大きさを抑える
-    const lineNum = 50; // ラインの数
-    const segmentNum = 600; // 分割数
+    const amplitude = stageH / 8; // 振幅（縦幅)の大きさを抑える
+    const lineNum = 100; // ラインの数
+    const segmentNum = 1500; // 分割数
 
     [...new Array(lineNum).keys()].forEach((j) => {
         const coefficient = 50 + j;

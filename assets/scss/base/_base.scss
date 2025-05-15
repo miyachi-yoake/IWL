@@ -187,9 +187,33 @@ a[href^="tel:"] {
     }
 }
 
+.mb-48-md16 {
+    margin-bottom: 48px;
+
+    @include mq(md) {
+        margin-bottom: 16px;
+    }
+}
+
 .md-mb-48 {
 
     @include mq(md) {
         margin-bottom: 48px;
+    }
+}
+
+.br-md {
+    display: none;
+
+    @include mq(md) {
+        display: block;
+    }
+}
+
+.br-pc {
+    display: block;
+
+    @include mq(md) {
+        display: none;
     }
 }
