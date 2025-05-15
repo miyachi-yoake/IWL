@@ -21,6 +21,14 @@ buttons
         background-position: center;
     }
 
+    &--white {
+        color: #fff;
+
+        &:after {
+            background-image: url(../img/common/brn_next_arrow_white.svg);
+        }
+    }
+
     @include hover {
         opacity: .8;
     }

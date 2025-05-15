@@ -93,13 +93,6 @@ a[href^="tel:"] {
         padding-top: 100px;
     }
 
-    &__title {
-        font-family: var(--font-family-title);
-        font-weight: 700;
-        line-height: 1.75;
-        letter-spacing: 0.1em;
-    }
-
     @include mq(md) {
         &--ptb {
             padding-top: 48px;
@@ -149,6 +142,22 @@ a[href^="tel:"] {
 
 .bg-qa {
     background-color: #F6F4EE;
+}
+
+.mb-75 {
+    margin-bottom: 75px;
+
+    @include mq(md) {
+        margin-bottom: 40px;
+    }
+}
+
+.mb-80 {
+    margin-bottom: 80px;
+
+    @include mq(md) {
+        margin-bottom: 40px;
+    }
 }
 
 .mb-100 {
