@@ -8,6 +8,15 @@ main-canvas
     height: calc(100vw * 1066 / 1600);
     overflow: hidden;
     position: relative;
+
+
+    @include mq(lg) {
+        height: 60vh;
+    }
+
+    @include mq(md) {
+        height: 50vh;
+    }
 }
 
 .main-canvas {
@@ -21,11 +30,10 @@ main-canvas
 
     &__content {
         width: 100%;
-
         z-index: 1;
         position: absolute;
         top: 190px;
-        left: 90 / 1600 * 100vw;
+        left: calc(90 / 1600 * 100vw);
     }
 
     &__title {
@@ -37,34 +45,50 @@ main-canvas
         text-transform: uppercase;
         position: relative;
         width: 100%;
-
     }
 
     &__message {
+
         display: block;
-        margin-top: 40px;
         font-size: 32px;
         font-weight: 600;
     }
-}
 
-.main-canvas__cath {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    text-align: inherit;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 2s cubic-bezier(0.4, 0, 0.2, 1);
-}
+    &__cath {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        text-align: inherit;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 2s cubic-bezier(0.4, 0, 0.2, 1);
 
-.main-canvas__cath--active {
-    opacity: 1;
-    pointer-events: auto;
-}
+        &--active {
+            opacity: 1;
+            pointer-events: auto;
+        }
 
-.main-canvas__cath--hidden {
-    opacity: 0;
-    pointer-events: none;
+        &--hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+    }
+
+    @include mq(lg) {
+
+        &__content {
+            top: (48 + 16px);
+            left: 16px;
+        }
+
+        &__title {
+            font-size: 54.9px;
+        }
+
+        &__message {
+            font-size: 20px;
+        }
+
+    }
 }
