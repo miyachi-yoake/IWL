@@ -2446,7 +2446,7 @@ page
 }
 .single article {
   max-width: 840px;
-  margin: 169px auto 100px;
+  margin: 70px auto 100px;
 }
 @media (width < 768px) {
   .single__title {
