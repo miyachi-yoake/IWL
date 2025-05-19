@@ -37,6 +37,7 @@ a {
 
     @include hover {
         color: var(--color-link-hover);
+        opacity: .8;
     }
 }
 

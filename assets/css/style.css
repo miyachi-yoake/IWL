@@ -312,6 +312,7 @@ a {
 @media (hover: hover) {
   a:hover, a:focus {
     color: var(--color-link-hover);
+    opacity: 0.8;
   }
 }
 
@@ -2570,5 +2571,118 @@ page
 .orignal-table01 th,
 .orignal-table02 th {
   background: #F6F6F6;
+}
+
+.challenge-list {
+  margin: 40px 0;
+  border: 1px solid #DAD5C7;
+  padding-inline: 30px;
+  border-radius: 12px;
+}
+.challenge-list__header {
+  padding-top: 10px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 14px;
+  border-bottom: 1px solid #DAD5C7;
+}
+.challenge-list__company {
+  width: 100%;
+  padding: 0 20px;
+  border-left: 1px solid #DAD5C7;
+}
+.challenge-list__title {
+  text-align: center;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+.challenge-list__company-item {
+  display: flex;
+  gap: 4px 16px;
+}
+.challenge-list__company-item dt {
+  color: #8D9295;
+  min-width: 70px;
+  font-weight: 400;
+}
+.challenge-list__company-item dd a {
+  color: #0184C8;
+  display: block;
+  text-decoration: underline;
+}
+.challenge-list__body {
+  padding: 20px 0;
+}
+.challenge-list__body-item {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.challenge-list__body-item:last-child {
+  margin-bottom: 0;
+}
+.challenge-list__body-item-title {
+  font-size: 16px;
+  line-height: 1.5;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.challenge-list__body-item-text {
+  font-size: 16px;
+  line-height: 1.75;
+  margin-bottom: 0;
+}
+.challenge-list__body-item-block {
+  max-width: 380px;
+  width: 100%;
+  min-height: 158px;
+  padding: 20px;
+  border-radius: 7px;
+  background: #F6F6F6;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+.challenge-list__body-item-block--solution {
+  background: #F6F4EE;
+}
+.challenge-list .triangle {
+  background: #DAD5C7;
+  height: 36px;
+  min-width: 20px;
+  max-width: 20px;
+  -webkit-clip-path: polygon(0 0, 100% 50%, 0 100%);
+          clip-path: polygon(0 0, 100% 50%, 0 100%);
+}
+@media (width < 768px) {
+  .challenge-list {
+    padding-inline: 16px;
+  }
+  .challenge-list__header {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .challenge-list__company {
+    border-left: none;
+    padding: 0 0 20px;
+  }
+  .challenge-list__company dt {
+    width: 22%;
+  }
+  .challenge-list__company dd a {
+    width: 100%;
+  }
+  .challenge-list__body-item {
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 40px;
+  }
+  .challenge-list .triangle {
+    transform: rotate(90deg);
+  }
 }
 /*# sourceMappingURL=style.css.map */
